@@ -210,3 +210,72 @@ Example
     </div>
 </div>
 ```
+
+
+# Columns
+Learn how to modify columns with a handful of options for alignment, ordering, and offsetting thanks to our flexbox grid system. Plus, see how to use column classes to manage widths of non-grid elements.
+
+## Vertical Alignment
+Change the vertical alignment with any of the responsive align-items-* classes.
+
+`align-items-start`
+`align-items-center`
+`align-items-end`
+`align-self-start`
+`align-self-center`
+`align-self-end`
+`justify-content-start`
+`justify-content-center`
+`justify-content-end`
+`justify-content-around`
+`justify-content-between`
+`justify-content-evenly`
+
+## Column Breaks
+```html
+<!-- Force next columns to break to new line -->
+<div class="w-100"></div>
+
+<!-- Force next columns to break to new line at md breakpoint and up -->
+<div class="w-100 d-none d-md-block"></div>
+```
+
+## Orders
+Use .order- classes for controlling the visual order of your content. These classes are responsive, so you can set the order by breakpoint (e.g., .order-1.order-md-2). Includes support for 1 through 5 across all six grid tiers.
+
+There are also responsive .order-first and .order-last classes that change the order of an element by applying order: -1 and order: 6, respectively. These classes can also be intermixed with the numbered .order-* classes as needed.
+```html
+<div class="row">
+    <div class="col">
+        First in DOM, no order applied
+    </div>
+    <div class="col order-5">
+        Second in DOM, with a larger order
+    </div>
+    <div class="col order-1">
+        Third in DOM, with an order of 1
+    </div>
+    <div class="col order-last">
+      First in DOM, ordered last
+    </div>
+    <div class="col order-first">
+      Third in DOM, ordered first
+    </div>
+</div>
+```
+
+## Offset
+You can offset grid columns in two ways: our responsive .offset- grid classes and our margin utilities. Grid classes are sized to match columns while margins are more useful for quick layouts where the width of the offset is variable.
+```html
+<div class="row">
+    <div class="col-md-4">.col-md-4</div>
+    <div class="col-md-4 offset-md-4">.col-md-4 .offset-md-4</div>
+</div>
+<div class="row">
+    <div class="col-md-3 offset-md-3">.col-md-3 .offset-md-3</div>
+    <div class="col-md-3 offset-md-3">.col-md-3 .offset-md-3</div>
+</div>
+<div class="row">
+    <div class="col-md-6 offset-md-3">.col-md-6 .offset-md-3</div>
+</div>
+```

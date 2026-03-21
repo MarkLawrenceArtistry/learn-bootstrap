@@ -1,0 +1,9 @@
+
+
+.align {
+    height: 300px;
+}
+
+.align > * {
+    height: 100px;
+}
