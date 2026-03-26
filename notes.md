@@ -279,3 +279,243 @@ You can offset grid columns in two ways: our responsive .offset- grid classes an
     <div class="col-md-6 offset-md-3">.col-md-6 .offset-md-3</div>
 </div>
 ```
+
+
+# Gutters
+Gutters are the padding between your columns, used to responsively space and align content in the Bootstrap grid system.
+
+Gutters are the gaps between column content, created by horizontal padding. We set padding-right and padding-left on each column, and use negative margin to offset that at the start and end of each row to align content.
+
+Gutters start at 1.5rem (24px) wide. This allows us to match our grid to the padding and margin spacers scale.
+
+Gutters can be responsively adjusted. Use breakpoint-specific gutter classes to modify horizontal gutters, vertical gutters, and all gutters.
+
+## Horizontal Gutters
+`.gx-*` classes can be used to control the horizontal gutter widths. The .container or .container-fluid parent may need to be adjusted if larger gutters are used too to avoid unwanted overflow, using a matching padding utility. For example, in the following example we’ve increased the padding with .px-4:
+
+```html
+<div class="container px-4 text-center">
+    <div class="row gx-5">
+        <div class="col">
+            <div class="p-3">Custom column padding</div>
+        </div>
+        <div class="col">
+            <div class="p-3">Custom column padding</div>
+        </div>
+    </div>
+</div>
+
+<!-- Or An alternative solution is to add a wrapper around the .row with the .overflow-hidden class -->
+<div class="container overflow-hidden text-center">
+    <div class="row gx-5">
+        <div class="col">
+            <div class="p-3">Custom column padding</div>
+        </div>
+        <div class="col">
+            div class="p-3">Custom column padding</div>
+        </div>
+    </div>
+</div>
+```
+
+
+## Vertical Gutters
+`.gy-*` classes can be used to control the vertical gutter widths within a row when columns wrap to new lines. Like the horizontal gutters, the vertical gutters can cause some overflow below the .row at the end of a page. If this occurs, you add a wrapper around .row with the .overflow-hidden class:
+
+```html
+<div class="container overflow-hidden text-center">
+    <div class="row gy-5">
+        <div class="col-6">
+            <div class="p-3">Custom column padding</div>
+        </div>
+        <div class="col-6">
+            <div class="p-3">Custom column padding</div>
+        </div>
+        <div class="col-6">
+            <div class="p-3">Custom column padding</div>
+        </div>
+        <div class="col-6">
+            <div class="p-3">Custom column padding</div>
+        </div>
+    </div>
+</div>
+```
+
+## Horizontal & vertical gutters
+Use `.g-*` classes to control the horizontal and vertical grid gutters. In the example below, we use a smaller gutter width, so there isn’t a need for the .overflow-hidden wrapper class.
+
+```html
+<div class="container text-center">
+    <div class="row g-2">
+        <div class="col-6">
+            <div class="p-3">Custom column padding</div>
+        </div>
+        <div class="col-6">
+            <div class="p-3">Custom column padding</div>
+        </div>
+        <div class="col-6">
+            <div class="p-3">Custom column padding</div>
+        </div>
+        <div class="col-6">
+            <div class="p-3">Custom column padding</div>
+        </div>
+    </div>
+</div>
+```
+
+## Row Columns Gutters
+Gutter classes can also be added to row columns. In the following example, we use responsive row columns and responsive gutter classes.
+
+```html
+<div class="container text-center">
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        <div class="col">
+            <div class="p-3">Row column</div>
+        </div>
+        <div class="col">
+            <div class="p-3">Row column</div>
+        </div>
+        <div class="col">
+            <div class="p-3">Row column</div>
+        </div>
+        <div class="col">
+            <div class="p-3">Row column</div>
+        </div>
+        <div class="col">
+            <div class="p-3">Row column</div>
+        </div>
+        <div class="col">
+            <div class="p-3">Row column</div>
+        </div>
+        <div class="col">
+            <div class="p-3">Row column</div>
+        </div>
+        <div class="col">
+            <div class="p-3">Row column</div>
+        </div>
+        <div class="col">
+            <div class="p-3">Row column</div>
+        </div>
+        <div class="col">
+            <div class="p-3">Row column</div>
+        </div>
+    </div>
+</div>
+```
+
+## No Gutters
+The gutters between columns in our predefined grid classes can be removed with .g-0. This removes the negative margins from .row and the horizontal padding from all immediate children columns.
+
+Need an edge-to-edge design? Drop the parent .container or .container-fluid and add .mx-0 to the .row to prevent overflow.
+
+In practice, here’s how it looks. Note that you can continue to use this with all other predefined grid classes (including column widths, responsive tiers, reorders, and more).
+
+```html
+<div class="row g-0 text-center">
+    <div class="col-sm-6 col-md-8">.col-sm-6 .col-md-8</div>
+    <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+</div>
+```
+
+
+# Spacing
+Bootstrap includes a wide range of shorthand responsive margin, padding, and gap utility classes to modify an element’s appearance.
+
+## Notation
+The classes are named using the format `{property}{sides}-{size}` for xs and `{property}{sides}-{breakpoint}-{size}` for sm, md, lg, xl, and xxl.
+
+Where property is one of:
+`m` - for classes that set margin
+`p` - for classes that set padding
+
+Where sides is one of:
+`t` - for classes that set margin-top or padding-top
+`b` - for classes that set margin-bottom or padding-bottom
+`s` - (start) for classes that set margin-left or padding-left in LTR, margin-right or padding-right in RTL
+`e` - (end) for classes that set margin-right or padding-right in LTR, margin-left or padding-left in RTL
+`x` - for classes that set both *-left and *-right
+`y` - for classes that set both *-top and *-bottom
+`blank` - for classes that set a margin or padding on all 4 sides of the element
+
+Where size is one of:
+`0` - for classes that eliminate the margin or padding by setting it to 0
+`1` - (by default) for classes that set the margin or padding to $spacer * .25
+`2` - (by default) for classes that set the margin or padding to $spacer * .5
+`3` - (by default) for classes that set the margin or padding to $spacer
+`4` - (by default) for classes that set the margin or padding to $spacer * 1.5
+`5` - (by default) for classes that set the margin or padding to $spacer * 3
+`auto` - for classes that set the margin to auto
+
+
+
+# Form
+
+## Layout
+Give your forms some structure—from inline to horizontal to custom grid implementations—with our form layout options.
+
+```html
+<form>
+    <div class="mb-3">
+        <h1 class="text-black fw-bold">Create your account</h1>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input type="text" class="form-control" placeholder="Type your usename here..." required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" placeholder="Type your password here..." required>
+        <div class="form-text">Passwords must be 8 characters long.</div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <label class="form-label">First Name</label>
+            <input type="text" class="form-control" placeholder="Type your first name here..." required>
+        </div>
+
+        <div class="col">
+            <label class="form-label">Last Name</label>
+            <input type="text" class="form-control" placeholder="Type your last name here..." required>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Gender</label>
+        <select class="form-select">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="mature">
+            <label class="form-check-label" for="mature">18 Above</label>
+        </div>
+    </div>
+    <div class="mb-3">
+        <button class="btn btn-primary w-100">Submit</button>
+    </div>
+</form>
+```
+
+
+
+# Navigation Bar
+Documentation and examples for Bootstrap’s powerful, responsive navigation header, the navbar. Includes support for branding, navigation, and more, including support for our collapse plugin.
+
+## How It Works
+- Navbars require a wrapping .navbar with .navbar-expand{-sm|-md|-lg|-xl|-xxl} for responsive collapsing and color scheme classes.
+- Navbars and their contents are fluid by default. Change the container to limit their horizontal width in different ways.
+- Use our spacing and flex utility classes for controlling spacing and alignment within navbars.
+- Navbars are responsive by default, but you can easily modify them to change that. Responsive behavior depends on our Collapse JavaScript plugin.
+- Ensure accessibility by using a <nav> element or, if using a more generic element such as a <div>, add a role="navigation" to every navbar to explicitly identify it as a landmark region for users of assistive technologies.
+- Indicate the current item by using aria-current="page" for the current page or aria-current="true" for the current item in a set.
+- New in v5.2.0: Navbars can be themed with CSS variables that are scoped to the .navbar base class. .navbar-light has been deprecated and .navbar-dark has been rewritten to override CSS variables instead of adding additional styles.
+
+## Content
+- `.navbar-brand` for your company, product, or project name.
+- `.navbar-nav` for a full-height and lightweight navigation (including support for dropdowns).
+- `.navbar-toggler` for use with our collapse plugin and other navigation toggling behaviors.
+- Flex and spacing utilities for any form controls and actions.
+- `.navbar-text` for adding vertically centered strings of text.
+- `.collapse.navbar-collapse` for grouping and hiding navbar contents by a parent breakpoint.
+- Add an optional `.navbar-nav-scroll` to set a max-height and scroll expanded navbar content.
