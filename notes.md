@@ -519,3 +519,33 @@ Documentation and examples for Bootstrap’s powerful, responsive navigation hea
 - `.navbar-text` for adding vertically centered strings of text.
 - `.collapse.navbar-collapse` for grouping and hiding navbar contents by a parent breakpoint.
 - Add an optional `.navbar-nav-scroll` to set a max-height and scroll expanded navbar content.
+
+
+
+# Cards
+Bootstrap’s cards provide a flexible and extensible content container with multiple variants and options.
+
+## Content Types
+1. Body
+```html
+<div class="card">
+    <div class="card-body">
+        This is some text within a card body.
+    </div>
+</div>
+```
+2. Titles, text, and links 
+Card titles are used by adding .card-title to a <h*> tag. In the same way, links are added and placed next to each other by adding .card-link to an <a> tag.
+
+Subtitles are used by adding a .card-subtitle to a <h*> tag. If the .card-title and the .card-subtitle items are placed in a .card-body item, the card title and subtitle are aligned nicely.
+```html
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+    </div>
+</div>
+```
