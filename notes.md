@@ -576,3 +576,159 @@ Subtitles are used by adding a .card-subtitle to a <h*> tag. If the .card-title 
 <button type="button" class="btn btn-outline-light">Light</button>
 <button type="button" class="btn btn-outline-dark">Dark</button>
 ```
+
+# Tables
+```html
+<div class="col">
+    <table class="table table-hover caption-top">
+        <caption>List of data</caption>
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            <tr class="table-danger">
+                <th scope="row">1</th>
+                <td scope="col">John</td>
+                <td scope="col">Doe</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td scope="col">Allonah</td>
+                <td scope="col">Laurente</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<hr>
+
+<div class="col">
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td scope="col">John</td>
+                <td scope="col">Doe</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td scope="col">Allonah</td>
+                <td scope="col">Laurente</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<hr>
+
+<div class="col">
+    <table class="table table-success table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td scope="col">John</td>
+                <td scope="col">Doe</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td scope="col">Allonah</td>
+                <td scope="col">Laurente</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td scope="col">Might</td>
+                <td scope="col">Guy</td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td scope="col">Madara</td>
+                <td scope="col">Uchiha</td>
+            </tr>
+            
+        </tbody>
+    </table>
+</div>
+
+<div class="col table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>DATA</th>
+                <th>DATA</th>
+                <th>DATA</th>
+                <th>DATA</th>
+                <th>DATA</th>
+                <th>DATA</th>
+                <th>DATA</th>
+                <th>DATA</th>
+                <th>DATA</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>DATA</td>
+                <td>DATA</td>
+                <td>DATA</td>
+                <td>DATA</td>
+                <td>DATA</td>
+                <td>DATA</td>
+                <td>DATA</td>
+                <td>DATA</td>
+                <td>DATA</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+```
+
+# Alerts
+Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+
+```html
+<div class="container p-5">
+    <div id="liveAlertPlaceholder"></div>
+    <button type="button" class="btn btn-primary" id="liveAlertBtn">Show live alert</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script>
+    const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+    const appendAlert = (message, type) => {
+        const wrapper = document.createElement('div')
+        wrapper.innerHTML = [
+            `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+            `   <div>${message}</div>`,
+            '   <button type="button" class="btn-close" data-bs-dismiss="alert"></button>',
+            '</div>'
+        ].join('')
+
+        alertPlaceholder.append(wrapper)
+    }
+
+    const alertTrigger = document.getElementById('liveAlertBtn')
+    if (alertTrigger) {
+        alertTrigger.addEventListener('click', () => {
+            appendAlert('Nice, you triggered this alert message!', 'success')
+        })
+    }
+</script>
+
+```

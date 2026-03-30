@@ -11,7 +11,7 @@ const db = require('./database')
 
 // ---- Middlewares
 // app.use('/static', express.static(path.join(__dirname, 'public')))
-app.use(express.static('public'))
+app.use(express.static('public/bootstrap'))
 app.use(express.json())
 app.use(cors())
 
